@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Authcontext } from '../../Provider/AuthProvider';
+import { FaRegUserCircle } from 'react-icons/fa';
 
 const Navbar = () => {
+    const {user,logOut}=useContext(Authcontext);
+
+    const handleLogout=()=>{
+        logOut()
+        .then()
+        .catch(error=>console.log(error))
+    }
+
     return (
         <div>
             <div className="navbar bg-amber-600">
@@ -12,7 +22,16 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li className='text-white ml-6'> <Link to='/'>Home</Link> </li>
                         <li className='text-white ml-6'> <Link>chef</Link></li>
-                        <li className='text-white ml-6'> <Link to='/login'> Login</Link></li>
+                        {
+                          user && <FaRegUserCircle style={{ fontSize: '2rem' }}></FaRegUserCircle>
+
+                        }
+                        { user?  
+                         <li className='text-white ml-6'> <Link onClick={handleLogout} to='/login'> Logout</Link></li> :
+                         <li className='text-white ml-6'> <Link to='/login'> Login</Link></li> 
+
+                        
+                        }
                         <li className='text-white ml-6'><Link to='/register'>Register</Link></li>
                     </ul>
                 </div>

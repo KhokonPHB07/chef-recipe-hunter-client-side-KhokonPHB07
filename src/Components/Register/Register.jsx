@@ -1,9 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
+import { Authcontext } from '../../Provider/AuthProvider';
 
 const Register = () => {
+
+    const{createUser}=useContext(Authcontext)
+
+    const handleRegister =(event)=>{
+          event.preventDefault();
+          const form=event.target;
+          const name=form.name.value;
+          const photo=form.photo.value;
+          const email=form.email.value;
+          const password=form.password.value;
+          console.log(name,photo,email,password);
+
+        createUser(email,password)
+        .then(result=>{
+            const createdUser=result.user;
+            console.log(createdUser);
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+
+    }
+
+
     return (
         <div>
             <Navbar></Navbar>
@@ -23,7 +48,7 @@ const Register = () => {
                     </div>
 
                     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                        <form className="space-y-6">
+                        <form onSubmit={handleRegister} className="space-y-6">
                             <div>
                                 <label className="block text-sm font-medium leading-6 text-gray-900">Your Name</label>
                                 <div className="mt-2">

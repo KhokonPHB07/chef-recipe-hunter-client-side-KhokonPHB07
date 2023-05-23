@@ -21,12 +21,9 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     children : [
       {
-        path : '/home',
+        path :'/home',
         element : <Home></Home>
-      },
-     
-      
-     
+      }
     ]
   },
   {
@@ -35,6 +32,7 @@ const router = createBrowserRouter([
     loader : ()=> fetch('http://localhost:5000/chefBio')
     
   },
+
   {
     path : '/login',
     element : <Login></Login>

@@ -20,9 +20,9 @@ const Navbar = () => {
                 </div>
                 <div className="flex grow-1">
                     <ul className="menu menu-horizontal px-1">
-                        <li className='text-white ml-6'> <Link to='/'>Home</Link> </li>
+                        {/* <li className='text-white ml-6'> <Link to='/home'>Home</Link> </li> */}
                         <li className='text-white ml-6'> <Link to='/blog'>blog</Link> </li>
-                        <li className='text-white ml-6'> <Link to='/chefBio'>All Chef</Link></li>
+                        <li className='text-white ml-6'> <Link to='/chefBio'>Home</Link></li>
                         {
                           user && <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
 

@@ -14,6 +14,7 @@ import Recipie from './Pages/Recipie/Recipie.jsx';
 import Home from './Pages/Home/Home.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import BlogPages from './Pages/BlogPages/BlogPages.jsx';
+import ChefRecipiePage from './Pages/ChefRecipiePage/ChefRecipiePage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,8 @@ const router = createBrowserRouter([
       {
         path :'/home',
         element : <Home></Home>
-      }
+      },
+     
     ]
   },
   {
@@ -31,6 +33,12 @@ const router = createBrowserRouter([
     element : <Recipie></Recipie>,
     loader : ()=> fetch('http://localhost:5000/chefBio')
     
+  },
+
+  {
+    path : '/chefrecipiepage/:id',
+    element : <ChefRecipiePage></ChefRecipiePage>,
+    loader : ({params})=>fetch(`http://localhost:5000/chefBio/${params.id}`)
   },
 
   {

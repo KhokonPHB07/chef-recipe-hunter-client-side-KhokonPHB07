@@ -4,10 +4,20 @@ import Footer from '../Footer/Footer';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { Authcontext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2'
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../Firebase/Firebase.config';
+
+
+
+
 
 const Login = () => {
 
-    const { signIn } = useContext(Authcontext);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    const { signIn} = useContext(Authcontext);
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -15,21 +25,43 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
-        
+
+        if (password.length < 6) {
+            
+            Swal.fire('Password must be at least 6 characters long');
+            return;
+          }
+
         signIn(email, password)
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-            alert('Login Successfully');
-        })
-        .catch(error => {
-            console.log(error);
-            alert(error.message);
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                Swal.fire('Login Successfully')
+                form.reset();
+            })
+            .catch(error => {
+                console.log(error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `${error.message}`,
+                    
+                  })
+            })
 
     }
 
-   
+    const googleLogIn =()=>{
+        signInWithPopup(auth,provider)
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.log('error',error.message);
+        })
+    }
+
+
 
     return (
         <div>
@@ -74,21 +106,22 @@ const Login = () => {
                             </div>
 
                             <div>
-                                <Link to="/">
+
                                 <button type="submit"
                                     className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                                     Login </button>
-                                </Link>
-                                <p className="flex w-full justify-center mt-10 mb-10">----------   or Continue with   ----------</p>
 
-                                <button type="submit"
-                                    className="flex w-full justify-center items-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mb-4">
-                                    <FaGoogle className='mx-3'></FaGoogle> google</button>
-                                <button type="submit"
-                                    className="flex w-full justify-center items-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                                    <FaGithub className='mx-3'></FaGithub> Github </button>
+
                             </div>
                         </form>
+                        <p className="flex w-full justify-center mt-10 mb-10">----------   or Continue with   ----------</p>
+
+                        <button type="submit" onClick={googleLogIn}
+                            className="flex w-full justify-center items-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mb-4">
+                            <FaGoogle className='mx-3'></FaGoogle> google</button>
+                        <button type="submit"
+                            className="flex w-full justify-center items-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                            <FaGithub className='mx-3'></FaGithub> Github </button>
 
                         <p className="mt-10 text-center text-sm text-gray-500">
                             Not a member? <Link to='/register' className='text-violet-600'>Register Please</Link>

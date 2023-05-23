@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
 import { Authcontext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const Register = () => {
 
@@ -21,9 +22,18 @@ const Register = () => {
         .then(result=>{
             const createdUser=result.user;
             console.log(createdUser);
+            Swal.fire(' Congrats !!!User created successfully.Now Login Please!!!!')
+            form.reset();
         })
         .catch(error=>{
             console.log(error);
+            
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `${error.message}`,
+                
+              })
         })
 
     }

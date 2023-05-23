@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Authcontext } from '../../Provider/AuthProvider';
-import { FaRegUserCircle } from 'react-icons/fa';
+import {  FaUserCircle } from 'react-icons/fa';
 
 const Navbar = () => {
     const {user,logOut}=useContext(Authcontext);
@@ -23,7 +23,7 @@ const Navbar = () => {
                         <li className='text-white ml-6'> <Link to='/'>Home</Link> </li>
                         <li className='text-white ml-6'> <Link>chef</Link></li>
                         {
-                          user && <FaRegUserCircle style={{ fontSize: '2rem' }}></FaRegUserCircle>
+                          user && <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
 
                         }
                         { user?  

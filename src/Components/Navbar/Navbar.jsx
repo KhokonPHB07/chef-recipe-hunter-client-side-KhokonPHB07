@@ -22,7 +22,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li className='text-white ml-6'> <Link to='/'>Home</Link> </li>
                         <li className='text-white ml-6'> <Link to='/blog'>blog</Link> </li>
-                        <li className='text-white ml-6'> <Link>chef</Link></li>
+                        <li className='text-white ml-6'> <Link to='/recipie'>recipie</Link></li>
                         {
                           user && <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
 

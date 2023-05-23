@@ -26,11 +26,14 @@ const router = createBrowserRouter([
       },
      
       
-      {
-        path : '/recipie',
-        element : <Recipie></Recipie>
-      }
+     
     ]
+  },
+  {
+    path : '/recipie',
+    element : <Recipie></Recipie>,
+    loader : ()=> fetch('http://localhost:5000/chefBio')
+    
   },
   {
     path : '/login',

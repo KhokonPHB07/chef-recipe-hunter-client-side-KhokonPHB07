@@ -5,7 +5,7 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { Authcontext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../Firebase/Firebase.config';
 
 
@@ -16,6 +16,7 @@ const Login = () => {
 
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
+    const gitHubProvider = new GithubAuthProvider();
 
     const { signIn} = useContext(Authcontext);
 
@@ -61,6 +62,17 @@ const Login = () => {
         })
     }
 
+    const gitHubLogin =()=>{
+        signInWithPopup(auth,gitHubProvider)
+        .then(result=>{
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .catch(error=>{
+            console.log('error',error.message);
+        })
+
+    }
 
 
     return (
@@ -119,7 +131,7 @@ const Login = () => {
                         <button type="submit" onClick={googleLogIn}
                             className="flex w-full justify-center items-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mb-4">
                             <FaGoogle className='mx-3'></FaGoogle> google</button>
-                        <button type="submit"
+                        <button type="submit" onClick={gitHubLogin}
                             className="flex w-full justify-center items-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                             <FaGithub className='mx-3'></FaGithub> Github </button>
 

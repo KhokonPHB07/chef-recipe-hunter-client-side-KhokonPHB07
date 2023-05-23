@@ -13,6 +13,7 @@ import Register from './Components/Register/Register.jsx';
 import Recipie from './Pages/Recipie/Recipie.jsx';
 import Home from './Pages/Home/Home.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
+import BlogPages from './Pages/BlogPages/BlogPages.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
         path : '/home',
         element : <Home></Home>
       },
+     
       
       {
         path : '/recipie',
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
   {
     path : '/register',
     element : <Register></Register>
+  },
+  {
+    path : '/blog',
+    element : <BlogPages></BlogPages>
   },
   {
     path : '*',

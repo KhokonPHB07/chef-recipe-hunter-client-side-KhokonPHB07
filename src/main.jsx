@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path : '/recipie',
+    path : '/chefBio',
     element : <Recipie></Recipie>,
     loader : ()=> fetch('http://localhost:5000/chefBio')
     

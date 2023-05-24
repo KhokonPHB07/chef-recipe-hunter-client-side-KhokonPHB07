@@ -15,17 +15,18 @@ import Home from './Pages/Home/Home.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import BlogPages from './Pages/BlogPages/BlogPages.jsx';
 import ChefRecipiePage from './Pages/ChefRecipiePage/ChefRecipiePage.jsx';
+import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
     children : [
+      
       {
-        path :'/home',
-        element : <Home></Home>
-      },
-     
+        path :'/',
+        element : <LandingPage></LandingPage>
+      }
     ]
   },
   {
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
     loader : ({params})=>fetch(`http://localhost:5000/chefBio/${params.id}`)
   },
 
+      
+  {
+    path : '/blog',
+    element : <BlogPages></BlogPages>
+  },
   {
     path : '/login',
     element : <Login></Login>
@@ -49,14 +55,10 @@ const router = createBrowserRouter([
     path : '/register',
     element : <Register></Register>
   },
-  {
-    path : '/blog',
-    element : <BlogPages></BlogPages>
-  },
-  {
-    path : '*',
-    element : <Error></Error>
-  }
+  // {
+  //   path : '*',
+  //   element : <Error></Error>
+  // }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

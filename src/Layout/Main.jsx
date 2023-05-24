@@ -11,7 +11,6 @@ const Main = () => {
                 <Header></Header>
                 <Navbar></Navbar>
                 <Outlet></Outlet>
-                <ChefsBio></ChefsBio>
                 <Footer></Footer>
         </div>
     );

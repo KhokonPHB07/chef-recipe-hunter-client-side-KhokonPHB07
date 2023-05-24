@@ -9,21 +9,21 @@ const ChefsBio = ({ chef }) => {
     if (!chef || !chef.chefName) {
         // Handle the case when chef data is missing or undefined
         return <div></div>; // Replace with your custom error message or component
-      }
+    }
 
-      setTimeout(() => {
+    setTimeout(() => {
         setIsLoading(false);
-      }, 100);
+    }, 100);
 
-      if (isLoading) {
+    if (isLoading) {
         return <div>Loading...</div>; // Replace with your custom loader component or message
-      }
-    
-    const { chefName,chefPicture,likes,numberOfRecipes,yearsOfExperience } = chef;
+    }
+
+    const { id,chefName, chefPicture, likes, numberOfRecipes, yearsOfExperience } = chef;
 
     return (
         <div >
-            
+
             <div className="card card-side bg-base-100 shadow-xl ">
                 <figure><img src={chefPicture} alt="Movie" /></figure>
                 <div className="card-body">
@@ -32,11 +32,14 @@ const ChefsBio = ({ chef }) => {
                     <p>Years of Experience:{yearsOfExperience}</p>
                     <p><FaHeart></FaHeart> Total Likes: {likes} </p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary"> <Link to='/chefrecipiepage'> View Recipes</Link></button>
+                        <button className="btn btn-primary">
+                            <Link to={`/chefrecipiepage/${id}`}>View Recipes</Link>
+                        </button>
+
                     </div>
                 </div>
             </div>
-            
+
 
         </div>
     );

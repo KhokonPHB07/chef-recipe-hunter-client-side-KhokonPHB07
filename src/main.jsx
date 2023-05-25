@@ -63,10 +63,10 @@ const router = createBrowserRouter([
     loader: () => fetch('http://localhost:5000/recipie'),
    
   },
-  {
-    path: '/ShowRecipie',
-    element: <ShowRecipie></ShowRecipie>
-  }
+  // {
+  //   path: '/ShowRecipie',
+  //   element: <ShowRecipie></ShowRecipie>
+  // }
  
   // {
   //   path : '*',

@@ -11,7 +11,7 @@ const BestChefRecipie = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h1>this is best chefrecipie</h1>
+            <h1 className='text-2xl font-semibold italic text-center mt-10 mb-10'>---------- best chefrecipie ----------</h1>
            <div className='grid grid-cols-3 mx-8 my-20 gap-8'>
            {
                 recipieDetails.map(recipie=><ShowRecipie

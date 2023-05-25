@@ -1,13 +1,14 @@
 import React from 'react';
+import { FaStar } from "react-icons/fa";
 
 const ShowRecipie = ({ recipie }) => {
-    const { id, recipeName, ingredients, cookingMethod, rating, favorite } = recipie;
+    const { id, recipeName, ingredients, cookingMethod, rating,imageUrl } = recipie;
 
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
-                    <img src="https://i.ibb.co/GVCxjwN/3106411-what-is-red-meat.jpg" alt="Shoes" className="rounded-xl" />
+                    <img src={imageUrl} alt="Shoes" className="rounded-xl" />
                 </figure>
                 <div className="card-body ">
                     <h2 className="card-title">{recipeName}</h2>
@@ -23,7 +24,15 @@ const ShowRecipie = ({ recipie }) => {
                     </p>
                     <p> Cooking Method : {cookingMethod}</p>
                     <p>Rating : {rating}</p>
-                    <p>Favourite : {favorite}</p>
+                    <p>Favourite 
+                        <div className='flex'>
+                        <FaStar className='text-orange-500'></FaStar>
+                        <FaStar className='text-orange-500'></FaStar>
+                        <FaStar className='text-orange-500'></FaStar>
+                        <FaStar className='text-orange-500'></FaStar>
+                        <FaStar className='text-orange-500'></FaStar>
+                        </div>
+                        </p>
                     <div className="card-actions">
                         <button className="btn btn-primary">Order Now</button>
                     </div>

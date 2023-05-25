@@ -24,7 +24,7 @@ const ChefRecipiePage = () => {
                         <p className="py-6 font-semibold text-lg"> Number of Recipies : {numberOfRecipes}</p>
                         <p className="py-6 font-semibold text-lg"> Years Of Experience : {yearsOfExperience}</p>
                         <p className="py-6 font-semibold text-lg"> Total likes : {likes}</p>
-                        <button className="btn btn-primary font-semibold text-lg"> show recipie </button>
+                        <button className="btn btn-primary font-semibold text-lg"> <Link to='/BestChefRecipie'>show recipie</Link></button>
                     </div>
                 </div>
             </div>

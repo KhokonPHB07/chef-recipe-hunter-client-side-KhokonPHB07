@@ -18,66 +18,56 @@ import ChefRecipiePage from './Pages/ChefRecipiePage/ChefRecipiePage.jsx';
 import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import BestChefRecipie from './Components/BestChefRecipie/BestChefRecipie.jsx';
 import ShowRecipie from './Components/ShowRecipie/ShowRecipie.jsx';
+import ChefsBio from './Pages/ChefsBio/ChefsBio.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    children: [
-
+    children : [
       {
-        path: '/',
-        element: <LandingPage></LandingPage>
+        path: "/",
+        element: <Recipie></Recipie>,
+        loader: () => fetch("http://localhost:5000/chefBio")
       }
+
     ]
   },
+  // {
+  //   path: "/",
+  //   element: <Recipie></Recipie>,
+  //   loader: () => fetch("http://localhost:5000/chefBio")
+  // },
   {
-    path: '/chefBio',
-    element: <Recipie></Recipie>,
-    loader: () => fetch('http://localhost:5000/chefBio')
-
-  },
-
-  {
-    path: '/chefrecipiepage/:id',
+    path: "/chefrecipiepage/:id",
     element: <ChefRecipiePage></ChefRecipiePage>,
-    loader: ({ params }) => fetch(`http://localhost:5000/chefBio/${params.id}`)
+    loader: ({ params }) =>
+      fetch(`http://localhost:5000/chefBio/${params.id}`)
   },
-
-
   {
-    path: '/blog',
+    path: "/blog",
     element: <BlogPages></BlogPages>
   },
   {
-    path: '/login',
+    path: "/login",
     element: <Login></Login>
   },
   {
-    path: '/register',
+    path: "/register",
     element: <Register></Register>
   },
   {
-    path: '/BestChefRecipie',
+    path: "/BestChefRecipie",
     element: <BestChefRecipie></BestChefRecipie>,
-    loader: () => fetch('http://localhost:5000/recipie'),
-   
-  },
-  // {
-  //   path: '/ShowRecipie',
-  //   element: <ShowRecipie></ShowRecipie>
-  // }
- 
-  // {
-  //   path : '*',
-  //   element : <Error></Error>
-  // }
+    loader: () => fetch("http://localhost:5000/recipie")
+  }
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
     </AuthProvider>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
+

@@ -10,8 +10,7 @@ const Recipie = () => {
     console.log(chefDetails);
     return (
         <div>
-            <Header></Header>
-            <Navbar></Navbar>
+            
         <h1 className='text-lg font-semibold italic text-center mt-10'>-------------------- Here is our all Famous Chef --------------------</h1>
             <div className='grid grid-cols-3 mx-8 my-20 gap-8'>
                 {
@@ -58,7 +57,7 @@ const Recipie = () => {
                 </div>
             </div>
             {/* this is 3rd section end */}
-            <Footer></Footer>
+            
         </div>
     );
 };

@@ -4,6 +4,7 @@ import Footer from '../Components/Footer/Footer';
 import { Outlet } from "react-router-dom";
 import Navbar from '../Components/Navbar/Navbar';
 import ChefsBio from '../Pages/ChefsBio/ChefsBio';
+import Recipie from '../Pages/Recipie/Recipie';
 
 const Main = () => {
     return (

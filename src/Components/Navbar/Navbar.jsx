@@ -5,7 +5,7 @@ import { FaUserCircle } from 'react-icons/fa';
 
 const Navbar = () => {
     const { user, logOut } = useContext(Authcontext);
-
+    console.log(user);
     const handleLogout = () => {
         logOut()
             .then()
@@ -21,8 +21,9 @@ const Navbar = () => {
                 <div className="flex grow-1">
                     <ul className="menu menu-horizontal px-1">
                         {/* <li className='text-white ml-6'> <Link to='/home'>Home</Link> </li> */}
-                        <li className='text-white ml-6'> <Link to='/blog'>blog</Link> </li>
+                        
                         <li className='text-white ml-6'> <Link to='/chefBio'>Home</Link></li>
+                        
                         {user && (
                             <li className="text-white ml-6">
                                 <FaUserCircle style={{ fontSize: '2rem' }} />
@@ -35,6 +36,7 @@ const Navbar = () => {
                             </li>
                         )}
                         <li className='text-white ml-6'><Link to='/register'>Register</Link></li>
+                        <li className='text-white ml-6'> <Link to='/blog'>blog</Link> </li>
                     </ul>
                 </div>
             </div>

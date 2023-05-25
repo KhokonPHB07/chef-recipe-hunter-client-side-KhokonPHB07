@@ -16,45 +16,58 @@ import AuthProvider from './Provider/AuthProvider.jsx';
 import BlogPages from './Pages/BlogPages/BlogPages.jsx';
 import ChefRecipiePage from './Pages/ChefRecipiePage/ChefRecipiePage.jsx';
 import LandingPage from './Pages/LandingPage/LandingPage.jsx';
+import BestChefRecipie from './Components/BestChefRecipie/BestChefRecipie.jsx';
+import ShowRecipie from './Components/ShowRecipie/ShowRecipie.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    children : [
-      
+    children: [
+
       {
-        path :'/',
-        element : <LandingPage></LandingPage>
+        path: '/',
+        element: <LandingPage></LandingPage>
       }
     ]
   },
   {
-    path : '/chefBio',
-    element : <Recipie></Recipie>,
-    loader : ()=> fetch('http://localhost:5000/chefBio')
-    
+    path: '/chefBio',
+    element: <Recipie></Recipie>,
+    loader: () => fetch('http://localhost:5000/chefBio')
+
   },
 
   {
-    path : '/chefrecipiepage/:id',
-    element : <ChefRecipiePage></ChefRecipiePage>,
-    loader : ({params})=>fetch(`http://localhost:5000/chefBio/${params.id}`)
+    path: '/chefrecipiepage/:id',
+    element: <ChefRecipiePage></ChefRecipiePage>,
+    loader: ({ params }) => fetch(`http://localhost:5000/chefBio/${params.id}`)
   },
 
-      
+
   {
-    path : '/blog',
-    element : <BlogPages></BlogPages>
+    path: '/blog',
+    element: <BlogPages></BlogPages>
   },
   {
-    path : '/login',
-    element : <Login></Login>
+    path: '/login',
+    element: <Login></Login>
   },
   {
-    path : '/register',
-    element : <Register></Register>
+    path: '/register',
+    element: <Register></Register>
   },
+  {
+    path: '/BestChefRecipie',
+    element: <BestChefRecipie></BestChefRecipie>,
+    loader: () => fetch('http://localhost:5000/recipie'),
+   
+  },
+  {
+    path: '/ShowRecipie',
+    element: <ShowRecipie></ShowRecipie>
+  }
+ 
   // {
   //   path : '*',
   //   element : <Error></Error>
@@ -63,7 +76,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <AuthProvider>
+    <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
     </AuthProvider>
   </React.StrictMode>,

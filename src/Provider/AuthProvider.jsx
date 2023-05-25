@@ -10,42 +10,65 @@ const auth = getAuth(app);
 
 
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
 
-    const [user,setUser] = useState(null) ;
-    const [loading,setLoading]=useState(true);
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-    const createUser = (email,password)=>{
+    const createUser = async (email, password) => {
         setLoading(true);
-        return createUserWithEmailAndPassword(auth,email,password);
-        
-    }
+        try {
+            const userCreated = await createUserWithEmailAndPassword(auth, email, password);
+            setUser(userCreated.user);
+            setLoading(false);
+            return userCreated;
+        } catch (error) {
+            setLoading(false);
+            throw error;
+        }
+    };
 
-    const signIn=(email,password)=>{
+    const signIn = async (email, password) => {
         setLoading(true);
-        return signInWithEmailAndPassword (auth,email,password);
-    }
+        try {
+            const signInUser = await signInWithEmailAndPassword(auth, email, password);
+            setUser(signInUser.user);
+            setLoading(false);
+            return signInUser;
+        } catch (error) {
+            setLoading(false);
+            throw error;
+        }
+    };
 
 
-   
 
-    const logOut=()=>{
+    const logOut = () => {
         setLoading(true);
-        return signOut(auth);
-    }
+        return signOut(auth)
+            .then(() => {
+                setUser(null); // Set to null or an empty object, depending on your implementation
+                setLoading(false);
+            })
+            .catch(error => {
+                setLoading(false);
+                throw error;
+            });
+    };
 
-    // useEffect(()=>{
-    //    const unsubscribe = onAuthStateChanged(auth,loggedUser=>{
-            
-    //         setUser(loggedUser);
-    //         setLoading(false);
-    //     })
 
-    //     return()=>{
-    //         unsubscribe();
-    //     }
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, loggedUser => {
 
-    // },[])
+            setUser(loggedUser);
+            setLoading(false);
+        })
+
+        return () => {
+            unsubscribe();
+        }
+
+    }, [])
 
     const authInfo = {
         user,
@@ -53,7 +76,7 @@ const AuthProvider = ({children}) => {
         signIn,
         logOut,
         loading
-        }
+    }
 
     return (
         <Authcontext.Provider value={authInfo}>

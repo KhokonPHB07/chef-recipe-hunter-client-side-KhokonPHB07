@@ -47,7 +47,7 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signOut(auth)
             .then(() => {
-                setUser(null); // Set to null or an empty object, depending on your implementation
+                setUser(null); 
                 setLoading(false);
             })
             .catch(error => {

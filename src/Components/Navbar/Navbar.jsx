@@ -32,11 +32,11 @@ const Navbar = () => {
                         )}
                         {user ? (
                             <li className="text-white ml-6">
-                                <Link onClick={handleLogout} to="/login">Logout</Link></li>) : ( <li className="text-white ml-6"><Link to="/login">Login</Link>
+                                <Link onClick={handleLogout} to="/login" >Logout</Link></li>) : ( <li className="text-white ml-6"><Link to="/login">Login</Link>
                             </li>
                         )}
-                        <li className='text-white ml-6'><Link to='/register'>Register</Link></li>
-                        <li className='text-white ml-6'> <Link to='/blog'>blog</Link> </li>
+                        <li className='text-white ml-6'><Link to='/register' >Register</Link></li>
+                        <li className='text-white ml-6'> <Link to='/blog' >blog</Link> </li>
                     </ul>
                 </div>
             </div>

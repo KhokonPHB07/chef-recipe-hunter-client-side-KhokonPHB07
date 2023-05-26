@@ -38,8 +38,7 @@ const router = createBrowserRouter([
   {
     path: "/chefrecipiepage/:id",
     element: <ChefRecipiePage></ChefRecipiePage>,
-    loader: ({ params }) =>
-      fetch(`http://localhost:5000/chefBio/${params.id}`)
+    loader: ({ params }) =>fetch(`http://localhost:5000/chefBio/${params.id}`)
   },
   {
     path: "/blog",
@@ -55,18 +54,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/BestChefRecipie",
-    element: <BestChefRecipie />,
-    loader: async () => {
-      try {
-        const response = await fetch("http://localhost:5000/recipie");
-        const data = await response.json();
-        return data;
-      } catch (error) {
-        console.error("Error loading recipie data:", error);
-        throw error; // Optional: Throw the error to be handled by error boundaries or React Router
-      }
-    }
+    element: <BestChefRecipie></BestChefRecipie>,
+    loader: async () => await fetch("http://localhost:5000/recipie")
+
   }
+      
   
   // {
   //   path: "/BestChefRecipie",

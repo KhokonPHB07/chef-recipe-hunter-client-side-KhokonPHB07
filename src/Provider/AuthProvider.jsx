@@ -19,7 +19,7 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         try {
             const userCreated = await createUserWithEmailAndPassword(auth, email, password);
-            setUser(userCreated.user);
+            // setUser(userCreated.user);
             setLoading(false);
             return userCreated;
         } catch (error) {

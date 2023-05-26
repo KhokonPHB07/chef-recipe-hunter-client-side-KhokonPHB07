@@ -2,6 +2,7 @@ import React from 'react';
 import { FaStar } from "react-icons/fa";
 
 const ShowRecipie = ({ recipie }) => {
+    console.log("aita ager recipier data",recipie);
     const { id, recipeName, ingredients, cookingMethod, rating,imageUrl } = recipie;
 
     return (

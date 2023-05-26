@@ -19,11 +19,13 @@ import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import BestChefRecipie from './Components/BestChefRecipie/BestChefRecipie.jsx';
 import ShowRecipie from './Components/ShowRecipie/ShowRecipie.jsx';
 import ChefsBio from './Pages/ChefsBio/ChefsBio.jsx';
+import Error from './Pages/Error/Error.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement : <Error></Error>,
     children : [
       {
         path: "/",

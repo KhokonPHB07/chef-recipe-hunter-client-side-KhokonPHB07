@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Authcontext } from '../../Provider/AuthProvider';
-import { FaBtc, FaUserAlt, FaUserCircle } from 'react-icons/fa';
+
 
 const Navbar = () => {
-    
-
     const { user, logOut } = useContext(Authcontext);
     console.log('this is looged user from login', user);
 
@@ -32,9 +30,9 @@ const Navbar = () => {
                         {user && (
                             <li className="text-white ml-6">
                                 <div className="relative group">
-                                    <img className="rounded-full w-1/2" src={user?.photoURL}alt=""></img>
+                                    <img className="rounded-full w-1/2" src={user?.photoURL} alt={user?.email}></img>
                                     <span className="ml-2 absolute top-full left-1/2 -translate-x-1/2 bg-white rounded-lg p-2 text-gray-800 opacity-0 group-hover:opacity-100">
-                                        {user?.displayName}
+                                        {user?.displayName || user?.email}
                                     </span>
                                 </div>
                             </li>

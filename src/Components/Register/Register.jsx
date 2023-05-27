@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
 
 const Register = () => {
 
     const{createUser}=useContext(Authcontext)
-
+    const navigate=useNavigate();
     const handleRegister =(event)=>{
           event.preventDefault();
           const form=event.target;
@@ -22,7 +22,7 @@ const Register = () => {
         .then(result=>{
             const createdUser=result.user;
             console.log(createdUser);
-            Swal.fire(' Congrats !!!User created successfully.Now Login Please!!!!')
+            Swal.fire('Congrats !!!User created successfully.')
             form.reset();
         })
         .catch(error=>{
@@ -36,6 +36,10 @@ const Register = () => {
               })
         })
 
+    }
+
+    const userRouteToHomePage=()=>{
+        navigate('/');
     }
 
 
@@ -104,7 +108,7 @@ const Register = () => {
                             </div>
 
                             <div>
-                                <button type="submit"
+                                <button type="submit" onClick={userRouteToHomePage}
                                     className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                 > Register </button>
                             </div>

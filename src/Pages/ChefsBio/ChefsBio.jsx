@@ -30,8 +30,8 @@ const ChefsBio = ({ chef }) => {
                     <h2 className="card-title font-semibold"> Chef Name :  {chefName}</h2>
                     <p>Number Of Recipie :{numberOfRecipes}</p>
                     <p>Years of Experience :{yearsOfExperience}</p>
-                    <p><FaHeart></FaHeart> Total Likes : {likes} </p>
-                    <div className="card-actions justify-end">
+                    <p>Total Likes : {likes} </p>
+                    <div className="card-actions justify-start">
                     <button className="btn btn-outline btn-warning">
                             <Link to={`/chefrecipiepage/${id}`}>View Recipes</Link>
                         </button>

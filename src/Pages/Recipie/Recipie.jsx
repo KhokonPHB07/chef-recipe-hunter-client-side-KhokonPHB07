@@ -10,7 +10,7 @@ const Recipie = () => {
         <div>
             
         <h1 className='text-lg font-semibold italic text-center mt-10'>-------------------- Here is our all Famous Chef --------------------</h1>
-            <div className='grid grid-cols-3 mx-8 my-20 gap-8'>
+            <div className='grid grid-cols-3 mx-8 my-20 gap-8 '>
                 {
                     chefDetails.map(chef => <ChefsBio
                         key={chef.id}

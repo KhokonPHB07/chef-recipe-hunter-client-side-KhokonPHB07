@@ -8,7 +8,7 @@ const ChefsBio = ({ chef }) => {
 
     if (!chef || !chef.chefName) {
         // Handle the case when chef data is missing or undefined
-        return <div></div>; // Replace with your custom error message or component
+        return <div></div>; 
     }
 
     setTimeout(() => {
@@ -16,7 +16,7 @@ const ChefsBio = ({ chef }) => {
     }, 100);
 
     if (isLoading) {
-        return <div>Loading...</div>; // Replace with your custom loader component or message
+        return <div>Loading...</div>; // 
     }
 
     const { id,chefName, chefPicture, likes, numberOfRecipes, yearsOfExperience } = chef;

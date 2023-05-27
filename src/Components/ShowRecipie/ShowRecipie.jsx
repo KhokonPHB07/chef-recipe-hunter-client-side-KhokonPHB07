@@ -12,20 +12,20 @@ const ShowRecipie = ({ recipie }) => {
                     <img src={imageUrl} alt="Shoes" className="rounded-xl" />
                 </figure>
                 <div className="card-body ">
-                    <h2 className="card-title">{recipeName}</h2>
-                    <p> Ingredients : 
+                    <h2 className="card-title font-semibold italic text-xl">{recipeName}</h2>
+                    <p> <span className='font-bold'></span> Ingredients : 
 
-                        <li>{ingredients[0]}</li>
+                        <li >{ingredients[0]}</li>
                             <li>{ingredients[1]}</li>
-                            <li>{ingredients[2]}</li>
-                            <li>{ingredients[3]}</li>
-                            <li>{ingredients[4]}</li>
+                            <li >{ingredients[2]}</li>
+                            <li >{ingredients[3]}</li>
+                            <li >{ingredients[4]}</li>
 
 
                     </p>
-                    <p> Cooking Method : {cookingMethod}</p>
-                    <p>Rating : {rating}</p>
-                    <p>Favourite 
+                    <p> <span className='font-bold'>Cooking Method :</span> {cookingMethod}</p>
+                    <p className='font-bold'>Rating : {rating}</p>
+                    <p className='font-bold'>Favourite 
                         <div className='flex'>
                         <FaStar className='text-orange-500'></FaStar>
                         <FaStar className='text-orange-500'></FaStar>

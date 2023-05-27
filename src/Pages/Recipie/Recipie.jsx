@@ -1,9 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ChefsBio from '../ChefsBio/ChefsBio';
-import Header from '../../Components/Header/Header';
-import Navbar from '../../Components/Navbar/Navbar';
-import Footer from '../../Components/Footer/Footer';
+
 
 const Recipie = () => {
     const chefDetails = useLoaderData();
@@ -21,6 +19,7 @@ const Recipie = () => {
                     ></ChefsBio>)
                 }
             </div>
+            
             {/* this is 2nd section start */}
             <h1 className='text-lg font-semibold italic text-center'>-------------------- Customize and order your food --------------------</h1>
             <div>

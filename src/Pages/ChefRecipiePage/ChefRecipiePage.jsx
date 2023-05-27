@@ -31,7 +31,7 @@ const ChefRecipiePage = () => {
             <Navbar></Navbar>
             {/* this is chef bio details single form */}
 
-            <div className="hero  bg-base-200 mb-10 mt-10">
+            <div className="hero bg-orange-100 mb-10 mt-10">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src={chefPicture} className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
@@ -40,14 +40,14 @@ const ChefRecipiePage = () => {
                         <p className="py-1 font-semibold text-lg"> Number of Recipies : {numberOfRecipes}</p>
                         <p className="py-1 font-semibold text-lg"> Years Of Experience : {yearsOfExperience}</p>
                         <p className="py-1 font-semibold text-lg"> Total likes : {likes}</p>
-                        <button className="btn btn-primary font-semibold text-lg"> <Link to='/BestChefRecipie'>show recipie</Link></button>
+                        
                     </div>
                 </div>
             </div>
 
             {/* this is chef bio details single form */}
 
-            <div className='grid grid-cols-3 mx-8 my-20 gap-8'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 justify-evenly gap-10 mb-10 md:mx-48 lg:mx-96'>
             {
                 recipies.map(recipie=><ShowRecipie
                     key={recipie.id}
@@ -55,7 +55,9 @@ const ChefRecipiePage = () => {
                 ></ShowRecipie>)
             }
             </div>
-            
+            <div className='flex  justify-center items-center mb-10' >
+            <button className=" rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"> <Link className='px-32 py-8' to="/">Back to Home</Link> </button>
+            </div>
             
             <Footer></Footer>
         </div>

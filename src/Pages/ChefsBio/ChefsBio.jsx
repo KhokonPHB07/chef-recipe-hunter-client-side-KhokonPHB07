@@ -25,14 +25,14 @@ const ChefsBio = ({ chef }) => {
         <div >
 
             <div className="card card-side bg-base-100 shadow-xl ">
-                <figure><img src={chefPicture} alt="Movie" /></figure>
+                <figure ><img className='rounded-lg' src={chefPicture} alt="chef" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">Chef Name : {chefName}</h2>
-                    <p>Number Of Recipie:{numberOfRecipes}</p>
-                    <p>Years of Experience:{yearsOfExperience}</p>
-                    <p><FaHeart></FaHeart> Total Likes: {likes} </p>
+                    <h2 className="card-title font-semibold"> Chef Name :  {chefName}</h2>
+                    <p>Number Of Recipie :{numberOfRecipes}</p>
+                    <p>Years of Experience :{yearsOfExperience}</p>
+                    <p><FaHeart></FaHeart> Total Likes : {likes} </p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">
+                    <button className="btn btn-outline btn-warning">
                             <Link to={`/chefrecipiepage/${id}`}>View Recipes</Link>
                         </button>
 

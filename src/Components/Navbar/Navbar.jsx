@@ -14,11 +14,11 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar bg-amber-600">
+            <div className="navbar bg-amber-600 mt-2">
                 <div className="flex-1">
                     <p className=" text-xl text-white italic font-semibold">Banglar Khabar</p>
                 </div>
-                <div className="flex grow-1">
+                <div className="flex grow-1 px-24">
                     <ul className="menu menu-horizontal px-1">
                         {/* <li className='text-white ml-6'> <Link to='/home'>Home</Link> </li> */}
                         

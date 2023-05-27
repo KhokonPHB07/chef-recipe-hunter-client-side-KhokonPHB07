@@ -6,7 +6,7 @@ const BlogPages = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='mt-10 mb-10'>
+            <div className='my-20 mx-40'>
                 <h1 className='text-lg font-semibold'> Q.1 : Tell us the differences between uncontrolled and controlled components.</h1>
                 <p> Ans : controlled components provide more control and flexibility over form data, while uncontrolled components offer simplicity and are useful for straightforward form scenarios. The choice between them depends on the complexity of the form and the level of control and validation needed.</p> <br /><br /><br />
                 <h1 className='text-lg font-semibold'> Q.2 : How to validate React props using PropTypes?</h1>

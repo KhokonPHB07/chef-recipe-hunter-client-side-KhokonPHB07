@@ -1,17 +1,18 @@
 import React from 'react';
 import { FaStar } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const ShowRecipie = ({ recipie }) => {
     console.log("aita ager recipier data",recipie);
     const { id, recipeName, ingredients, cookingMethod, rating,imageUrl } = recipie;
 
     return (
-        <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+        <div className='flex justify-around'>
+            <div className="card w-96 bg-base-100 shadow-xl ">
                 <figure className="px-10 pt-10">
                     <img src={imageUrl} alt="Shoes" className="rounded-xl" />
                 </figure>
-                <div className="card-body ">
+                <div className="card-body   ">
                     <h2 className="card-title font-semibold italic text-xl">{recipeName}</h2>
                     <p> <span className='font-bold'></span> Ingredients : 
 
@@ -35,11 +36,11 @@ const ShowRecipie = ({ recipie }) => {
                         </div>
                         </p>
                     <div className="card-actions">
-                        <button className="btn btn-primary">Order Now</button>
+                    <button className="btn btn-outline btn-warning">Order Now</button>
                     </div>
                 </div>
             </div>
-
+           
         </div>
     );
 };

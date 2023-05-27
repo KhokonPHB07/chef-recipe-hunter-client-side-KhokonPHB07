@@ -21,20 +21,22 @@ const Recipie = () => {
             </div>
             
             {/* this is 2nd section start */}
-            <h1 className='text-lg font-semibold italic text-center'>-------------------- Customize and order your food --------------------</h1>
+            {/* <h1 className='text-lg font-semibold italic text-center'>-------------------- Customize and order your food --------------------</h1> */}
             <div>
                 <div className="hero  bg-base-200 mt-10 mb-10">
                     <div className="hero-content flex-col lg:flex-row">
                         <img src="https://i.ibb.co/55n9TC5/02.jpg" className="max-w-sm rounded-lg shadow-2xl" />
-                        <div>
-                            <h1 className="text-5xl font-bold">Customize and order your food</h1>
+                        <div className='ms-20'>
+                            <h1 className="text-5xl font-bold italic">Customize and order your food</h1>
                             <p className="py-6">If you are spicy lover choose our all lovely spice item</p>
                             <li>Hot rice with chili chicken</li>
                             <li>Hot beef seezling</li>
                             <li>Mashroom with Onion</li>
                             <li>Ilish fish with onion fry</li>
                             <li>Dry fish with chili fleaks</li>
-                            <button className="btn btn-primary">Get Started</button>
+                            <div className='my-5'>
+                            <button className="btn btn-warning px-5 hover:bg-orange-600 ">Customize food</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -42,15 +44,15 @@ const Recipie = () => {
             {/* this is 2nd section end */}
             
             {/* this is 3rd section start */}
-            <h1 className='text-lg font-semibold italic text-center mb-10'>-------------------- Choose your Menu --------------------</h1>
+            {/* <h1 className='text-lg font-semibold italic text-center mb-10'>-------------------- Choose your Menu --------------------</h1> */}
             <div>
-                <div className="hero  bg-base-200 mb-10">
+                <div className="hero  bg-base-200 mb-10 py-10">
                     <div className="hero-content flex-col lg:flex-row">
                         <img src="https://i.ibb.co/YRPjGw2/03.jpg" className="max-w-sm rounded-lg shadow-2xl" />
-                        <div>
-                            <h1 className="text-5xl font-bold">Choose your Menu</h1>
+                        <div className='ms-20'>
+                            <h1 className="text-5xl font-bold italic">Choose your Menu</h1>
                             <p className="py-6">From our 100+ Item select your love one</p>
-                            <button className="btn btn-primary px-5">Get Started</button>
+                            <button className="btn btn-warning px-5 hover:bg-orange-600 ">Select Menu</button>
                         </div>
                     </div>
                 </div>

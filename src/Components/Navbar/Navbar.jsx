@@ -31,13 +31,8 @@ const Navbar = () => {
 
                         {user && (
                             <li className="text-white ml-6">
-                                <div className="relative">
-                                    <img
-                                        className="rounded-full w-1/2"
-                                        // style={{ borderRadius: '50%', width: '64px', height: '64px' }}
-                                        src={user?.photoURL}
-                                        alt=""
-                                    />
+                                <div className="relative group">
+                                    <img className="rounded-full w-1/2" src={user?.photoURL}alt=""></img>
                                     <span className="ml-2 absolute top-full left-1/2 -translate-x-1/2 bg-white rounded-lg p-2 text-gray-800 opacity-0 group-hover:opacity-100">
                                         {user?.displayName}
                                     </span>

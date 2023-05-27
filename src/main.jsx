@@ -59,12 +59,6 @@ const router = createBrowserRouter([
 
   }
       
-  
-  // {
-  //   path: "/BestChefRecipie",
-  //   element: <BestChefRecipie></BestChefRecipie>,
-  //   loader: () => fetch("http://localhost:5000/recipie")
-  // }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -27,3 +27,6 @@ Here are some related projects
 
 this data has secured.
 
+
+## Live stie URL
+https://fruits-bangladesh-recipie.web.app/

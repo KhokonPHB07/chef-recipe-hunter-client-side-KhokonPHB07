@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import app from '../Firebase/Firebase.config';
 import { Dna } from 'react-loader-spinner';
 
@@ -20,7 +20,6 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         try {
             const userCreated = await createUserWithEmailAndPassword(auth, email, password);
-            // setUser(userCreated.user);
             setLoading(false);
             return userCreated;
         } catch (error) {
@@ -48,7 +47,7 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signOut(auth)
             .then(() => {
-                setUser(null); 
+                setUser(null);
                 setLoading(false);
             })
             .catch(error => {

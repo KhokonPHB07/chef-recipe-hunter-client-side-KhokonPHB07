@@ -13,12 +13,12 @@ const Navbar = () => {
             .catch(error => console.log(error))
     }
 
-   const navLinkStyle=({isActive})=>{
-    return {
-        fontWeight : isActive? 'bold':'normal',
-        // fontColor : isActive? 'black' : 'white'
+    const navLinkStyle = ({ isActive }) => {
+        return {
+            fontWeight: isActive ? 'bold' : 'normal',
+
+        }
     }
-   }
 
     return (
         <div>

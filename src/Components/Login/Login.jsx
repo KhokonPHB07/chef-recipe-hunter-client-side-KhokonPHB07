@@ -18,7 +18,7 @@ const Login = () => {
     const provider = new GoogleAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
 
-    const { signIn} = useContext(Authcontext);
+    const { signIn } = useContext(Authcontext);
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -28,10 +28,10 @@ const Login = () => {
         console.log(email, password);
 
         if (password.length < 6) {
-            
+
             Swal.fire('Password must be at least 6 characters long');
             return;
-          }
+        }
 
         signIn(email, password)
             .then(result => {
@@ -46,34 +46,34 @@ const Login = () => {
                     icon: 'error',
                     title: 'Oops...',
                     text: `${error.message}`,
-                    
-                  })
+
+                })
             })
 
     }
 
-    const googleLogIn =()=>{
-        signInWithPopup(auth,provider)
-        .then(result=>{
-            const user = result.user;
-            console.log(user);
-            navigate('/');
-        })
-        .catch(error=>{
-            console.log('error',error.message);
-        })
+    const googleLogIn = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate('/');
+            })
+            .catch(error => {
+                console.log('error', error.message);
+            })
     }
 
-    const gitHubLogin =()=>{
-        signInWithPopup(auth,gitHubProvider)
-        .then(result=>{
-            const loggedUser = result.user;
-            console.log(loggedUser);
-            navigate('/');
-        })
-        .catch(error=>{
-            console.log('error',error.message);
-        })
+    const gitHubLogin = () => {
+        signInWithPopup(auth, gitHubProvider)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate('/');
+            })
+            .catch(error => {
+                console.log('error', error.message);
+            })
 
     }
 
@@ -124,7 +124,7 @@ const Login = () => {
 
                                 <button type="submit"
                                     className="flex w-full justify-center rounded-md bg-orange-400 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-700">
-                                   Login</button>
+                                    Login</button>
 
 
                             </div>

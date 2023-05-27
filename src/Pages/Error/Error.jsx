@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useRouteError } from "react-router-dom";
 
 const Error = () => {
-    const error = useRouteError();
+  const error = useRouteError();
   console.error(error);
 
   return (
@@ -13,10 +13,10 @@ const Error = () => {
         <i>{error.statusText || error.message}</i>
       </p>
       <div className='grid place-items-center gap-10'>
-      <img  src="https://i.ibb.co/L030BLj/error-elemen-01.jpg" alt="" />
-      <button className="btn hover:bg-violet-600"> <Link to="/">Back to Home</Link> </button>
+        <img src="https://i.ibb.co/L030BLj/error-elemen-01.jpg" alt="" />
+        <button className="btn hover:bg-violet-600"> <Link to="/">Back to Home</Link> </button>
       </div>
-      
+
     </div>
   );
 };

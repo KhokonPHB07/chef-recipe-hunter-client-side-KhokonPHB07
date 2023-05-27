@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FaHeart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 
@@ -8,7 +7,7 @@ const ChefsBio = ({ chef }) => {
 
     if (!chef || !chef.chefName) {
         // Handle the case when chef data is missing or undefined
-        return <div></div>; 
+        return <div></div>;
     }
 
     setTimeout(() => {
@@ -16,10 +15,10 @@ const ChefsBio = ({ chef }) => {
     }, 100);
 
     if (isLoading) {
-        return <div>Loading...</div>; // 
+        return <div>Loading...</div>;
     }
 
-    const { id,chefName, chefPicture, likes, numberOfRecipes, yearsOfExperience } = chef;
+    const { id, chefName, chefPicture, likes, numberOfRecipes, yearsOfExperience } = chef;
 
     return (
         <div >
@@ -32,7 +31,7 @@ const ChefsBio = ({ chef }) => {
                     <p>Years of Experience :{yearsOfExperience}</p>
                     <p>Total Likes : {likes} </p>
                     <div className="card-actions justify-start">
-                    <button className="btn btn-outline btn-warning">
+                        <button className="btn btn-outline btn-warning">
                             <Link to={`/chefrecipiepage/${id}`}>View Recipes</Link>
                         </button>
 

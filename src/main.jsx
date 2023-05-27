@@ -14,15 +14,15 @@ import Recipie from './Pages/Recipie/Recipie.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import BlogPages from './Pages/BlogPages/BlogPages.jsx';
 import ChefRecipiePage from './Pages/ChefRecipiePage/ChefRecipiePage.jsx';
-import BestChefRecipie from './Components/BestChefRecipie/BestChefRecipie.jsx';
+
 import Error from './Pages/Error/Error.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement : <Error></Error>,
-    children : [
+    errorElement: <Error></Error>,
+    children: [
       {
         path: "/",
         element: <Recipie></Recipie>,
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
   {
     path: "/chefrecipiepage/:id",
     element: <ChefRecipiePage></ChefRecipiePage>,
-    loader: ({ params }) =>fetch(`https://chef-recipie-server-pi.vercel.app/chefBio/${params.id}`)
+    loader: ({ params }) => fetch(`https://chef-recipie-server-pi.vercel.app/chefBio/${params.id}`)
   },
   {
     path: "/blog",
@@ -48,13 +48,13 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register></Register>
   },
-  {
-    path: "/BestChefRecipie",
-    element: <BestChefRecipie></BestChefRecipie>,
-    loader: async () => await fetch("https://chef-recipie-server-pi.vercel.app/recipie")
+  // {
+  //   path: "/BestChefRecipie",
+  //   element: <BestChefRecipie></BestChefRecipie>,
+  //   loader: async () => await fetch("https://chef-recipie-server-pi.vercel.app/recipie")
 
-  }
-    
+  // }
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

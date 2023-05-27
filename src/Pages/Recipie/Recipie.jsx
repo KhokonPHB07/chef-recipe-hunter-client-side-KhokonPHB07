@@ -8,8 +8,8 @@ const Recipie = () => {
     console.log(chefDetails);
     return (
         <div>
-            
-        <h1 className='text-lg font-semibold italic text-center mt-10'>-------------------- Here is our all Famous Chef --------------------</h1>
+
+            <h1 className='text-lg font-semibold italic text-center mt-10'>-------------------- Here is our all Famous Chef --------------------</h1>
             <div className='grid grid-cols-3 mx-8 my-20 gap-8 '>
                 {
                     chefDetails.map(chef => <ChefsBio
@@ -19,9 +19,9 @@ const Recipie = () => {
                     ></ChefsBio>)
                 }
             </div>
-            
+
             {/* this is 2nd section start */}
-            {/* <h1 className='text-lg font-semibold italic text-center'>-------------------- Customize and order your food --------------------</h1> */}
+
             <div>
                 <div className="hero  bg-base-200 mt-10 mb-10">
                     <div className="hero-content flex-col lg:flex-row">
@@ -35,16 +35,16 @@ const Recipie = () => {
                             <li>Ilish fish with onion fry</li>
                             <li>Dry fish with chili fleaks</li>
                             <div className='my-5'>
-                            <button className="btn btn-warning px-5 hover:bg-orange-600 ">Customize food</button>
+                                <button className="btn btn-warning px-5 hover:bg-orange-600 ">Customize food</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             {/* this is 2nd section end */}
-            
+
             {/* this is 3rd section start */}
-            {/* <h1 className='text-lg font-semibold italic text-center mb-10'>-------------------- Choose your Menu --------------------</h1> */}
+
             <div>
                 <div className="hero  bg-base-200 mb-10 py-10">
                     <div className="hero-content flex-col lg:flex-row">
@@ -58,7 +58,7 @@ const Recipie = () => {
                 </div>
             </div>
             {/* this is 3rd section end */}
-            
+
         </div>
     );
 };

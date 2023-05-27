@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
-import {Rating} from '@smastrom/react-rating';
+import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css'
 
 
@@ -40,8 +40,8 @@ const ShowRecipie = ({ recipie }) => {
 
                     </p>
                     <p> <span className='font-bold'>Cooking Method :</span> {cookingMethod}</p>
-                    {/* <p className='font-bold'>Rating : {rating}</p> */}
-                    <Rating style={{ maxWidth: 180 }} value={rating} readOnly/>
+
+                    <Rating style={{ maxWidth: 150 }} value={rating} readOnly />
                     <div className="card-actions">
                         <button onClick={alertSweet} className="btn btn-outline btn-warning" disabled={isButtonDisabled}>Favourite</button>
                     </div>

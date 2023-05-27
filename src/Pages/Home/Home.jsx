@@ -1,5 +1,5 @@
 import React from 'react';
-import ChefsBio from '../ChefsBio/ChefsBio';
+
 
 const Home = () => {
     return (

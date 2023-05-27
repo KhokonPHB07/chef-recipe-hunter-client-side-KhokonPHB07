@@ -16,7 +16,7 @@ const ChefRecipiePage = () => {
     
     const [recipies,setRecipies]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/recipie')
+        fetch('https://chef-recipie-server-pi.vercel.app/recipie')
         .then(res=>res.json())
         .then(data=>{
             const chefsRecipie = data.filter(recipie=>recipie.chefId===id);

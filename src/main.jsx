@@ -1,24 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 import Main from './Layout/Main.jsx';
 import Login from './Components/Login/Login.jsx';
 import Register from './Components/Register/Register.jsx';
 import Recipie from './Pages/Recipie/Recipie.jsx';
-import Home from './Pages/Home/Home.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import BlogPages from './Pages/BlogPages/BlogPages.jsx';
 import ChefRecipiePage from './Pages/ChefRecipiePage/ChefRecipiePage.jsx';
-import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import BestChefRecipie from './Components/BestChefRecipie/BestChefRecipie.jsx';
-import ShowRecipie from './Components/ShowRecipie/ShowRecipie.jsx';
-import ChefsBio from './Pages/ChefsBio/ChefsBio.jsx';
 import Error from './Pages/Error/Error.jsx'
 
 const router = createBrowserRouter([
@@ -30,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Recipie></Recipie>,
-        loader: () => fetch("http://localhost:5000/chefBio")
+        loader: () => fetch("https://chef-recipie-server-pi.vercel.app/chefBio")
       }
 
     ]
@@ -38,7 +34,7 @@ const router = createBrowserRouter([
   {
     path: "/chefrecipiepage/:id",
     element: <ChefRecipiePage></ChefRecipiePage>,
-    loader: ({ params }) =>fetch(`http://localhost:5000/chefBio/${params.id}`)
+    loader: ({ params }) =>fetch(`https://chef-recipie-server-pi.vercel.app/chefBio/${params.id}`)
   },
   {
     path: "/blog",
@@ -55,10 +51,10 @@ const router = createBrowserRouter([
   {
     path: "/BestChefRecipie",
     element: <BestChefRecipie></BestChefRecipie>,
-    loader: async () => await fetch("http://localhost:5000/recipie")
+    loader: async () => await fetch("https://chef-recipie-server-pi.vercel.app/recipie")
 
   }
-      
+    
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

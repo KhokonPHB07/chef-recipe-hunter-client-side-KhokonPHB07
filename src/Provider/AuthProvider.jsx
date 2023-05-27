@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../Firebase/Firebase.config';
+import { Dna } from 'react-loader-spinner';
 
 
 export const Authcontext = createContext(null);
@@ -80,7 +81,13 @@ const AuthProvider = ({ children }) => {
 
     return (
         <Authcontext.Provider value={authInfo}>
-            {children}
+            {loading ? (
+                // Render the DNA loading component while loading is true
+                <Dna visible={true} height="80" width="80" ariaLabel="dna-loading" wrapperStyle={{}} wrapperClass="dna-wrapper" />
+            ) : (
+                // Render the children components when loading is false
+                children
+            )}
         </Authcontext.Provider>
     );
 };

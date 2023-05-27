@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { FaStar } from "react-icons/fa";
-import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import {Rating} from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css'
+
 
 const ShowRecipie = ({ recipie }) => {
     console.log("aita ager recipier data", recipie);
@@ -39,7 +40,8 @@ const ShowRecipie = ({ recipie }) => {
 
                     </p>
                     <p> <span className='font-bold'>Cooking Method :</span> {cookingMethod}</p>
-                    <p className='font-bold'>Rating : {rating}</p>
+                    {/* <p className='font-bold'>Rating : {rating}</p> */}
+                    <Rating style={{ maxWidth: 180 }} value={rating} readOnly/>
                     <div className="card-actions">
                         <button onClick={alertSweet} className="btn btn-outline btn-warning" disabled={isButtonDisabled}>Favourite</button>
                     </div>

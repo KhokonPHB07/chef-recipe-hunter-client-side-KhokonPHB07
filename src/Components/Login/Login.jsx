@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
@@ -13,7 +13,7 @@ import app from '../../Firebase/Firebase.config';
 
 
 const Login = () => {
-
+    const navigate = useNavigate();
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
@@ -38,6 +38,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 Swal.fire('Login Successfully')
                 form.reset();
+                navigate('/');
             })
             .catch(error => {
                 console.log(error);

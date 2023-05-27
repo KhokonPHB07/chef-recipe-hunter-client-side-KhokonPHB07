@@ -23,7 +23,7 @@ const Recipie = () => {
             {/* this is 2nd section start */}
             <h1 className='text-lg font-semibold italic text-center'>-------------------- Customize and order your food --------------------</h1>
             <div>
-                <div className="hero min-h-screen bg-base-200 mt-10 mb-10">
+                <div className="hero  bg-base-200 mt-10 mb-10">
                     <div className="hero-content flex-col lg:flex-row">
                         <img src="https://i.ibb.co/55n9TC5/02.jpg" className="max-w-sm rounded-lg shadow-2xl" />
                         <div>
@@ -44,13 +44,13 @@ const Recipie = () => {
             {/* this is 3rd section start */}
             <h1 className='text-lg font-semibold italic text-center mb-10'>-------------------- Choose your Menu --------------------</h1>
             <div>
-                <div className="hero min-h-screen bg-base-200 mb-10">
+                <div className="hero  bg-base-200 mb-10">
                     <div className="hero-content flex-col lg:flex-row">
                         <img src="https://i.ibb.co/YRPjGw2/03.jpg" className="max-w-sm rounded-lg shadow-2xl" />
                         <div>
                             <h1 className="text-5xl font-bold">Choose your Menu</h1>
                             <p className="py-6">From our 100+ Item select your love one</p>
-                            <button className="btn btn-primary">Get Started</button>
+                            <button className="btn btn-primary px-5">Get Started</button>
                         </div>
                     </div>
                 </div>

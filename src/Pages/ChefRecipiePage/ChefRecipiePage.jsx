@@ -56,7 +56,7 @@ const ChefRecipiePage = () => {
             }
             </div>
             <div className='flex  justify-center items-center mb-10' >
-            <button className=" rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"> <Link className='px-32 py-8' to="/">Back to Home</Link> </button>
+            <button className=" rounded-md bg-orange-200 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-800"> <Link className='px-32 py-8' to="/">Back to Home</Link> </button>
             </div>
             
             <Footer></Footer>
